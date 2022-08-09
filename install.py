@@ -89,7 +89,7 @@ if not os.path.exists(os.path.join(paths['APIMODEL_PATH'], 'research', 'object_d
 
 # Install Tensorflow Object Detection 
 if os.name=='posix':  
-    get_ipython().system('apt-get install protobuf-compiler')
+    get_ipython().system('sudo apt install protobuf-compiler')
     get_ipython().system('cd Tensorflow/models/research && protoc object_detection/protos/*.proto --python_out=. && cp object_detection/packages/tf2/setup.py . && python -m pip install .')
     
 if os.name=='nt':
@@ -122,11 +122,10 @@ get_ipython().system('python {VERIFICATION_SCRIPT}')
 
 
 
+if os.name=='posix':
+    get_ipython().system('cp -R files_to_be_copied/workspace/ Tensorflow/')
 
-# In[6]:
-
-
-#import object_detection
+if os.name=='nt':
 
 get_ipython().system('xcopy %CD%\\files_to_be_copied\\workspace\\ %CD%\\Tensorflow\workspace\\ /s /e /h /i /y')
 
