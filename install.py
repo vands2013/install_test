@@ -127,6 +127,6 @@ if os.name=='posix':
 
 if os.name=='nt':
 
-get_ipython().system('xcopy %CD%\\files_to_be_copied\\workspace\\ %CD%\\Tensorflow\workspace\\ /s /e /h /i /y')
+    get_ipython().system('xcopy %CD%\\files_to_be_copied\\workspace\\ %CD%\\Tensorflow\workspace\\ /s /e /h /i /y')
 
 
